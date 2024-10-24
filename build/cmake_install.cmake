@@ -1,4 +1,4 @@
-# Install script for directory: /home/liu/helloworld
+# Install script for directory: /home/liu/桌面/helloworld
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/liu/helloworld/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/liu/桌面/helloworld/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
