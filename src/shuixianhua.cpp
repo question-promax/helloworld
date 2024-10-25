@@ -1,3 +1,5 @@
+//书目：1000以内的水仙花数
+
 #include <iostream>
 
 using namespace std;

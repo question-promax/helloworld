@@ -73,15 +73,15 @@ CMakeFiles/helloworld.dir/src/helloworld.cpp.o: CMakeFiles/helloworld.dir/flags.
 CMakeFiles/helloworld.dir/src/helloworld.cpp.o: ../src/helloworld.cpp
 CMakeFiles/helloworld.dir/src/helloworld.cpp.o: CMakeFiles/helloworld.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liu/桌面/helloworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/helloworld.dir/src/helloworld.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/helloworld.dir/src/helloworld.cpp.o -MF CMakeFiles/helloworld.dir/src/helloworld.cpp.o.d -o CMakeFiles/helloworld.dir/src/helloworld.cpp.o -c /home/liu/桌面/helloworld/src/helloworld.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/helloworld.dir/src/helloworld.cpp.o -MF CMakeFiles/helloworld.dir/src/helloworld.cpp.o.d -o CMakeFiles/helloworld.dir/src/helloworld.cpp.o -c /home/liu/桌面/helloworld/src/helloworld.cpp
 
 CMakeFiles/helloworld.dir/src/helloworld.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/helloworld.dir/src/helloworld.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liu/桌面/helloworld/src/helloworld.cpp > CMakeFiles/helloworld.dir/src/helloworld.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liu/桌面/helloworld/src/helloworld.cpp > CMakeFiles/helloworld.dir/src/helloworld.cpp.i
 
 CMakeFiles/helloworld.dir/src/helloworld.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/helloworld.dir/src/helloworld.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liu/桌面/helloworld/src/helloworld.cpp -o CMakeFiles/helloworld.dir/src/helloworld.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liu/桌面/helloworld/src/helloworld.cpp -o CMakeFiles/helloworld.dir/src/helloworld.cpp.s
 
 # Object files for target helloworld
 helloworld_OBJECTS = \
