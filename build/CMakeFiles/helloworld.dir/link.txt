@@ -1,1 +1,1 @@
-/usr/bin/g++ CMakeFiles/helloworld.dir/src/helloworld.cpp.o -o helloworld 
+/usr/bin/g++ -g CMakeFiles/helloworld.dir/src/helloworld.cpp.o -o helloworld 
