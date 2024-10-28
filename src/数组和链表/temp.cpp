@@ -27,7 +27,7 @@ int main ()
 {
     cout<<"  *"<<endl;
     cout<<" ***"<<endl;
-   
+}  
 // 只支持数字间只有一个空格、行末无多余空格的数据
 void ImageMatrix::scan()
 {
@@ -119,7 +119,7 @@ void test1()
 void test2()
 {
     freopen("test2_input.txt", "r", stdin); // 偷懒用freopen实则不会c++标准库中的文件操作
-    ImageMatrix matrix;
+    ImageMatrix matrix(5, 7); // Provide dimensions for the constructor
     matrix.scan();
     matrix.thresholding(100);
     matrix.rotate();
