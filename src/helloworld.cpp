@@ -1,9 +1,21 @@
 #include <stdio.h>
-#include <math.h>
 
+int main()
+{
+    int int1, int2;
 
-int main() {
-    double a, b, c, s,rs;
-    rs = sqrt(s*(s-a)*(s-b)*(s-c));
-    return rs;
+    scanf("%d %d", &int1, &int2);
+
+    if(int2 == 0)
+        printf("Error\n");
+    else
+        printf("%d = %d * %d + (%d)\n", 
+
+int1, 
+
+int1/int2, int2, int1%int2
+
+);
+
+    return 0;
 }
