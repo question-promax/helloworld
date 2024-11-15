@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/liu/桌面/helloworld/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/helloworld.dir/src/helloworld.cpp.o -c /home/liu/桌面/helloworld/src/helloworld.cpp",
-  "file": "/home/liu/桌面/helloworld/src/helloworld.cpp"
+  "command": "/usr/bin/g++   -g -o CMakeFiles/test.dir/src/test.cpp.o -c /home/liu/桌面/helloworld/src/test.cpp",
+  "file": "/home/liu/桌面/helloworld/src/test.cpp"
 }
 ]

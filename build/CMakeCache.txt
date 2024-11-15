@@ -144,7 +144,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=helloworld
+CMAKE_PROJECT_NAME:STATIC=test
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -216,6 +216,42 @@ helloworld_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 helloworld_SOURCE_DIR:STATIC=/home/liu/桌面/helloworld
+
+//Value Computed by CMake
+include_BINARY_DIR:STATIC=/home/liu/桌面/helloworld/build
+
+//Value Computed by CMake
+include_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+include_SOURCE_DIR:STATIC=/home/liu/桌面/helloworld
+
+//Value Computed by CMake
+t_BINARY_DIR:STATIC=/home/liu/桌面/helloworld/build
+
+//Value Computed by CMake
+t_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+t_SOURCE_DIR:STATIC=/home/liu/桌面/helloworld
+
+//Value Computed by CMake
+te_BINARY_DIR:STATIC=/home/liu/桌面/helloworld/build
+
+//Value Computed by CMake
+te_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+te_SOURCE_DIR:STATIC=/home/liu/桌面/helloworld
+
+//Value Computed by CMake
+test_BINARY_DIR:STATIC=/home/liu/桌面/helloworld/build
+
+//Value Computed by CMake
+test_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+test_SOURCE_DIR:STATIC=/home/liu/桌面/helloworld
 
 
 ########################
