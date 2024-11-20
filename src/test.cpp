@@ -1,53 +1,24 @@
+/*
+编写函数itob(n,s,b),用于把整数n转换成以b为基的字符串并存储到s中.   编写程序,使用函数itob(n,s,b)将输入的整数n,转换成字符串s,将s输出.转换后的字符串从最高的非零位开始输出。如果n为负数，则输出的字符串的第一个字符为'-'。b为大于1小于37的任意自然数值。当b=2时，输出字符只可能是'0'和'1'；当b=16时，输出字符串中可能含有字符为'0'-'9'，'a'-'f'(字母以小写输出)。b还可以是其它数值。比如输入n=33,b=17，则输出33的17进制值为"1g"。
+【输入形式】
+
+控制台输入整数n和b，其中n可以为负数。n和b以空格分隔.
+【输出形式】
+
+控制台输出转化后的字符串s.
+*/
 #include <iostream>
 #include <stdio.h>
-#include <cmath>
+
 using namespace std;
 
-
-int sum(int ge[], int m) {
-    int sum = 0;
-    for (int i = 0; i < m; i++)
-    sum += ge[i]*pow(10,m-1) ;
-    return sum;
-    }
-
-
-int main() {
-
-    int n = 0;
-    int m = 0;
-    int p = 0;
-    int ge[100];
-    int nums[20];
-    do
+char uu[42]={'0'};
+int main()
+{
+    for (int i = 0;i<10;i++)
     {
-        if(getchar()>='48'&&getchar()<='57')
-        {
-            ge[p++]=getchar()-'0';
-            m++;
-
-
-        }
-        else if(!(getchar()>='48'&&getchar()<='57'))
-        {
-            break;
-        }
-
-    } while  (getchar() != '32');
+        uu[i] = '0'+i;
+    }
+        
     
-    
-
-   
-
-  
-    
-
-        cout << "There are "<<n<<" integers:";
-        for (int i = 0; i < n; i++) {
-            cout << nums[i] << " ";
-        }
-    
-    cout << endl;
-    
-    return 0;
 }
