@@ -1,24 +1,37 @@
-/*
-编写函数itob(n,s,b),用于把整数n转换成以b为基的字符串并存储到s中.   编写程序,使用函数itob(n,s,b)将输入的整数n,转换成字符串s,将s输出.转换后的字符串从最高的非零位开始输出。如果n为负数，则输出的字符串的第一个字符为'-'。b为大于1小于37的任意自然数值。当b=2时，输出字符只可能是'0'和'1'；当b=16时，输出字符串中可能含有字符为'0'-'9'，'a'-'f'(字母以小写输出)。b还可以是其它数值。比如输入n=33,b=17，则输出33的17进制值为"1g"。
-【输入形式】
+#include<stdio.h>
 
-控制台输入整数n和b，其中n可以为负数。n和b以空格分隔.
-【输出形式】
+double m_tax(double salary,int month);
 
-控制台输出转化后的字符串s.
-*/
-#include <iostream>
-#include <stdio.h>
-
-using namespace std;
-
-char uu[42]={'0'};
 int main()
 {
-    for (int i = 0;i<10;i++)
+    double money,tax;
+    int i;
+    for(i=1;i<=12;i++)
     {
-        uu[i] = '0'+i;
+        scanf("%lf",&money);
+        tax=m_tax(money,i);
+        printf("the sum of %d months tax is %.2f\n",i,tax);
     }
-        
-    
+    return 0;
+}
+double m_tax(double salary,int month) {
+    double taxableIncome = salary - 5000 * month;
+    double tax = 0;
+
+    if (taxableIncome <= 36000) {
+        tax = taxableIncome * 0.03;
+    } else if (taxableIncome <= 144000) {
+        tax = 36000 * 0.03 + (taxableIncome - 36000) * 0.1;
+    } else if (taxableIncome <= 300000) {
+        tax = 36000 * 0.03 + 108000 * 0.1 + (taxableIncome - 144000) * 0.2;
+    } else if (taxableIncome <= 420000) {
+        tax = 36000 * 0.03 + 108000 * 0.1 + 156000 * 0.2 + (taxableIncome - 300000) * 0.25;
+    } else if (taxableIncome <= 660000) {
+        tax = 36000 * 0.03 + 108000 * 0.1 + 156000 * 0.2 + 120000 * 0.25 + (taxableIncome - 420000) * 0.3;
+    } else if (taxableIncome <= 960000) {
+        tax = 36000 * 0.03 + 108000 * 0.1 + 156000 * 0.2 + 120000 * 0.25 + 240000 * 0.3 + (taxableIncome - 660000) * 0.35;
+    } else {
+        tax = 36000 * 0.03 + 108000 * 0.1 + 156000 * 0.2 + 120000 * 0.25 + 240000 * 0.3 + 300000 * 0.35 + (taxableIncome - 960000) * 0.45;
+    }
+    return tax;
 }
