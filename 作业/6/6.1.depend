@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1735095725 source:/home/liu/桌面/helloworld/src/6.1/main.cpp
+	<iostream>
+	<stdio.h>
+
