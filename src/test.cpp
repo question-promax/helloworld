@@ -1,156 +1,109 @@
-#include <cstdio>
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<fstream>
+#include<stdlib.h>
 using namespace std;
-const  double  PI = 3.1415926;
 
-//图形的抽象基类
-class  Shape {
-public:
-    virtual  double  Area() = 0;  //求面积,  纯虚函数;
-};
-
-//求二维图形的抽象基类
-class  Shape2D :public  Shape {
-public:
-    virtual  double  Perimeter() = 0;  //求周长,  纯虚函数;
-};
-
-//求三维图形的抽象基类
-class  Shape3D :public  Shape {
-public:
-    virtual  double  Volume() = 0;  //求体积,  纯虚函数;
-};
-
-//派生类：矩形
-class  Rectangle : public  Shape2D
+void fun1()
 {
-public:
-    Rectangle(double length, double width) :length_(length), width_(width) {}
-    double Area() {return length_ * width_;}
-    double Perimeter() {return 2.0 * (length_ + width_);}
-private:
-    double length_;
-    double width_;
-};
-
-//派生类：椭圆
-class  Ellipse :public  Shape2D
-{
-public:
-    Ellipse(double semimajor,double semiminor):semimajor_(semimajor), semiminor_(semiminor) {}
-    double Area() {return PI * semimajor_ * semiminor_;}
-    double Perimeter() {return 2.0 * PI * sqrt((semimajor_ * semimajor_ + semiminor_ * semiminor_) / 2.0);}
-private:
-    double semimajor_;
-    double semiminor_;
-};
-
-//派生类：圆
-class  Circle : public  Shape2D
-{
-public:
-    Circle(double radius) :radius_(radius) {}
-    double Area() {return PI * radius_ * radius_;}
-    double Perimeter() {return 2.0 * PI * radius_;}
-private:
-    double radius_;
-};
-
-//派生类：球体
-class  Sphere :public  Shape3D
-{
-public:
-    Sphere(double radius) :radius_(radius) {}
-    double Area() {return 4.0 * PI * radius_ * radius_;}
-    double Volume() {return 4.0 / 3.0 * PI * radius_ * radius_ * radius_;}
-private:
-    double radius_;
-};
-
-//派生类：圆柱体
-class  Cylinder :public  Shape3D
-{
-public:
-    Cylinder(double height, double radius) :height_(height), radius_(radius) {}
-    double Area() {return 2.0 * PI * radius_ * (radius_ + height_);}
-    double Volume() {return PI * radius_ * radius_ * height_;}
-private:
-    double height_;
-    double radius_;
-};
-
-//派生类：圆锥体
-class  Cone : public  Shape3D
-{
-public:
-    Cone(double height, double radius) :height_(height), radius_(radius) {}
-    double Area() {return PI * radius_ * (radius_ + sqrt(radius_ * radius_ + height_ * height_));}
-    double Volume() {return 1.0 / 3.0 * PI * radius_ * radius_ * height_;}
-private:
-    double height_;
-    double radius_;
-};
-
-class  SumofShape
-{
-public:
-    //静态函数  计算图形数组面积之和
-    static  double  SumofArea(Shape** shape_array, int size) 
+    int a[10];
+        ifstream infile("in.txt");
+    if (!infile)
     {
-        double sum = 0;
-        for (int i = 0; i < size; i++)
-        {
-            sum += shape_array[i]->Area();
-        }
-        return sum;
+        cerr << "open in.txt error!" << endl;
+        exit(1);
     }
-
-    //静态函数  计算图形数组周长之和
-    static  double  SumofPerimeter(Shape** shape_array, int size) 
+    ofstream outfile1("f1.txt"), outfile2("f2.txt");
+    if (!outfile1 || !outfile2)
     {
-        double sum = 0;
-        for (int i = 0; i < size; i++)
+        cerr << "open f1.txt or f2.txt error!" << endl;
+        exit(1);
+    }
+    cout << "Enter 10 integer numbers:" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        if (i < 10) outfile1 << a[i] << "f1.txt";
+    }
+    cout<<"Enter 10 integer numbers:"<<endl;
+	for(int i=0; i<20; i++) 
+	{
+        if (20> i&&i > 9) outfile2 << a[i] << "f2.txt";
+		
+	}
+    infile.close();
+    outfile1.close();
+    outfile2.close();
+}
+
+void fun2()
+{
+    ifstream infile("f1.txt");
+    if (!infile)
+    {
+        cerr << "open f1.txt error!" << endl;
+        exit(1);
+    }
+    ofstream outfile("f2.txt", ios::app);
+    if (!outfile)
+    {
+        cerr << "open f2.txt error!" << endl;
+        exit(1);
+    }
+    int num;
+    while (infile >> num)
+    {
+        outfile << num << " ";
+    }
+    infile.close();
+    outfile.close();
+}
+
+void fun3()
+{
+    ifstream infile("f2.txt");
+    if (!infile)
+    {
+        cerr << "open f2.txt error!" << endl;
+        exit(1);
+    }
+    int a[20];
+    for (int i = 0; i < 20; i++)
+    {
+        infile >> a[i];
+    }
+    infile.close();
+
+    for (int i = 0; i < 19; i++)
+    {
+        for (int j = 0; j < 19 - i; j++)
         {
-            Shape2D* shape2D = dynamic_cast<Shape2D*>(shape_array[i]);
-            if (shape2D)
+            if (a[j] > a[j + 1])
             {
-                sum += shape2D->Perimeter();
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
             }
         }
-        return sum;
     }
 
-    //静态函数  计算图形数组的体积之和
-    static  double  SumofVolume(Shape** shape_array, int size) 
+    ofstream outfile("f2.txt", ios::out);
+    if (!outfile)
     {
-        double sum = 0;
-        for (int i = 0; i < size; i++)
-        {
-            Shape3D* shape3D = dynamic_cast<Shape3D*>(shape_array[i]);
-            if (shape3D)
-            {
-                sum += shape3D->Volume();
-            }
-        }
-        return sum;
+        cerr << "open f2.txt error!" << endl;
+        exit(1);
     }
+    for (int i = 0; i < 20; i++)
+    {
+        cout << a[i] << " ";
+        outfile << a[i] << " ";
+    }
+    cout << endl;
+    outfile.close();
+}
 
-private:
-    SumofShape() {}  //定义私有构造函数，禁止实例化
-};
-
-int  main() {
-    Rectangle  rectangle(2, 3);
-    Ellipse  ellipse(8, 4);
-    Circle  circle(3);
-    Sphere  sphere(3);
-    Cylinder  cylinder(3, 5);
-    Cone  cone(3, 4);
-    Shape* shape_array[] = { &rectangle,  &ellipse,  &circle,  &sphere,  &cylinder,  &cone };
-    double  sum_of_area = SumofShape::SumofArea(shape_array, 6);
-    double  sum_of_perimeter = SumofShape::SumofPerimeter(shape_array, 6);
-    double  sum_of_volume = SumofShape::SumofVolume(shape_array, 6);
-    cout << "Sum of Area: " << sum_of_area << "\nSum of Perimeter: " << sum_of_perimeter+1.3944 << "\nSum of Volume: " << sum_of_volume << endl;
-    return  0;
+int main()
+{
+    fun1();
+    fun2();
+    fun3();
+    return 0;
 }
